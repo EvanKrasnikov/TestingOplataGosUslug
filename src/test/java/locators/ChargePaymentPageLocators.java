@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 public enum ChargePaymentPageLocators {
 
-    PAY_LOGO_TEXT(By.xpath("//h1/abbr")),
+    PAY_LOGO_TEXT(By.xpath("//h1/*[text()='Оплата начислений']")),
     PAY_METHODS(By.xpath("//article[1]//ul[@class='pay-tabs__list']/li/a")),
     REG_NUM(By.xpath("//div[@id='panel-b1']//dl/dd[2]/pre")),
     FINE(By.xpath("//span[@class='nobr'][1]")),

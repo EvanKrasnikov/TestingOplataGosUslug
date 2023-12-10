@@ -15,6 +15,11 @@ public class RoadPoliceFinesPage {
         this.driver = driver;
     }
 
+    public void open() {
+        String url = "https://oplatagosuslug.ru/shtrafy_gibdd/";
+        driver.get(url);
+    }
+
     public void checkIfHeaderIsDisplayed() {
         WebElement headerText = driver.findElement(HEADER_TEXT.getLocator());
         assertEquals(
