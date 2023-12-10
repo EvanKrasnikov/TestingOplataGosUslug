@@ -29,6 +29,14 @@ public class ChargePaymentPage {
         );
     }
 
+    public void checkIfAnyFinesFound() {
+        String numOfFines = driver.findElement(NUMBER_OF_FINES.getLocator()).getText();
+        assertTrue(
+                Integer.parseInt(numOfFines) > 0,
+                "Должен быть найден хотя бы один штраф"
+        );
+    }
+
     public void checkIfPaymentMethodsAreDisplayed() {
         List<WebElement> payMethods = driver.findElements(PAY_METHODS.getLocator());
         List<String> payMethodsNames = payMethods.stream()
@@ -112,10 +120,9 @@ public class ChargePaymentPage {
         getBankReceiptOnEmailCheckBox.click();
     }
 
-    public void checkIfBankReceiptFeeIsDisplayedCorrectly() {
+    public void checkIfBankReceiptFeeIsDisplayedCorrectly(String expectedFee) {
         String bankReceiptFee = driver.findElement(BANK_RECEIPT_FEE.getLocator()).getText();
-        String bankReceiptFeeSplitted = StringHelper.split(bankReceiptFee, "\\s|\\+", 1);
-        assertEquals("35", bankReceiptFeeSplitted, "Сумма за оплату квитанции должна составлять 35р");
+        assertEquals(expectedFee, bankReceiptFee, "Сумма за оплату квитанции должна составлять " + expectedFee);
     }
 
     public void checkIfPaymentEqualsFinePlusBankReceiptFee() {

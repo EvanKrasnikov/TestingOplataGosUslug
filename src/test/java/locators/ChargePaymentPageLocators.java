@@ -14,7 +14,8 @@ public enum ChargePaymentPageLocators {
     PHONE_NUMBER_INPUT(By.xpath("//input[@id='pm-phone']")),
     MOBILE_OPERATORS_LOGOS(By.xpath("//article[1]//ul[@class='mobile-pay__logos']/li")),
     GET_BANK_RECEIPT_ON_EMAIL_CHECKBOX(By.xpath("//div[@class='control-wrapper']//label[contains(@class, 'checkbox')]")),
-    BANK_RECEIPT_FEE(By.xpath("//span[@class='strike-through']"));
+    BANK_RECEIPT_FEE(By.xpath("//span[@class='strike-through']")),
+    NUMBER_OF_FINES(By.xpath("//div[@id='content-zone']/p/strong"));
 
     private final By locator;
 
