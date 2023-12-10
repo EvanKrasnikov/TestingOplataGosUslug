@@ -3,7 +3,8 @@
 
 # Как запускать
 ```sh
-mvn test allure:report allure:serve
+./mvnw clean test
+./mvnw allure:serve
 ```
 
 # Todo
